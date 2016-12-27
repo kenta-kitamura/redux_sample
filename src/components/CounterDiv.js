@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-const CounterDiv = ({ counter, onIncrementClick, onDecrementClick, onIncrementIfOddClick, onIncrementAsyncClick }) => {
+const CounterDiv = ({ counter, onIncrementClick, onDecrementClick, onIncrementIfOddClick, onAddApiNumClick }) => {
   return (
     <div>
       <h1>Counter example</h1>
@@ -13,7 +13,7 @@ const CounterDiv = ({ counter, onIncrementClick, onDecrementClick, onIncrementIf
         {" "}
         <button className="incrementIfOdd" onClick={ onIncrementIfOddClick}>Increment if odd</button>
         {" "}
-        <button className="incrementAsync" onClick={ onIncrementAsyncClick }>Increment async</button>
+        <button className="addNumFromAPI" onClick={ onAddApiNumClick }>add num from api</button>
       </p>
     </div>
   )
@@ -24,7 +24,7 @@ CounterDiv.propTypes = {
   onIncrementClick: PropTypes.func.isRequired,
   onDecrementClick: PropTypes.func.isRequired,
   onIncrementIfOddClick: PropTypes.func.isRequired,
-  onIncrementAsyncClick: PropTypes.func.isRequired
+  onAddApiNumClick: PropTypes.func.isRequired
 }
 
 export default CounterDiv

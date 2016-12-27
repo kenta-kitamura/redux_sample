@@ -6,9 +6,11 @@ import Counter from '../containers/Counter'
 
 const App = () => (
   <div>
+    <h1>Todo List example</h1>
     <AddTodo />
     <VisibleTodoList />
     <Footer />
+    <br /><hr /><br />
     <Counter />
   </div>
 )

@@ -1,6 +1,10 @@
 import { handleActions } from 'redux-actions'
 
 const counter = handleActions({
+  ADD_API_NUM: (state, action) => {
+    return state + action.payload.num
+  },
+
   INCREMENT: (state, action) => {
     return state + 1
   },
