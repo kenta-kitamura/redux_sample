@@ -20,12 +20,18 @@ export const toggleTodo = createAction('TOGGLE_TODO',
   }
 )
 
+export const increment = createAction('INCREMENT')
+export const decrement = createAction('DECREMENT')
+export const apiAsync = createAction('API_ASYNC')
+export const apiAsyncMinus = createAction('API_ASYNC_MINUS')
+
 export const addApiNum = createAction('ADD_API_NUM',
   (num) => {
     return { num }
   }
 )
-export const increment = createAction('INCREMENT')
-export const decrement = createAction('DECREMENT')
-export const apiAsync = createAction('API_ASYNC')
-export const incrementIfOdd = createAction('INCREMENT_IF_ODD')
+export const minusApiNum = createAction('MINUS_API_NUM',
+  (num) => {
+    return { num }
+  }
+)

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { increment, decrement, incrementIfOdd, apiAsync } from '../actions'
+import { increment, decrement, apiAsyncMinus, apiAsync } from '../actions'
 import CounterDiv from '../components/CounterDiv'
 
 const mapStateToProps = (state) => {
@@ -12,7 +12,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onIncrementClick: () => dispatch(increment()),
     onDecrementClick: () => dispatch(decrement()),
-    onIncrementIfOddClick: () => dispatch(incrementIfOdd()),
+    onMinusApiNumClick: () => dispatch(apiAsyncMinus()),
     onAddApiNumClick: () => dispatch(apiAsync())
   }
 }

@@ -14,11 +14,9 @@ let store = createStore(todoApp, applyMiddleware(logger, sagaMiddleware))
 
 sagaMiddleware.run(rootSaga);
 
-document.addEventListener('DOMContentLoaded', () => {
-  render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
-    document.getElementById('root')
-  )
-})
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)

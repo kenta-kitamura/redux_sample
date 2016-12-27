@@ -9,8 +9,8 @@ const counter = handleActions({
     return state + 1
   },
 
-  INCREMENT_IF_ODD: (state, action) => {
-    return (state % 2 !== 0) ? state + 1 : state
+  MINUS_API_NUM: (state, action) => {
+    return state - action.payload.num
   },
 
   DECREMENT: (state, action) => {
