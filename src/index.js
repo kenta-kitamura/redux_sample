@@ -1,20 +1,24 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { createStore } from 'redux'
-import Counter from './components/Counter'
-import counter from './reducers'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { applyMiddleware, createStore } from 'redux'
+import createLogger from 'redux-logger'
+import createSagaMiddleware from 'redux-saga'
+import todoApp from './reducers'
+import App from './components/App'
+import rootSaga from "./sagas"
 
-const store = createStore(counter)
-const rootEl = document.getElementById('root')
+let logger = createLogger()
+let sagaMiddleware = createSagaMiddleware()
+let store = createStore(todoApp, applyMiddleware(logger, sagaMiddleware))
 
-const render = () => ReactDOM.render(
-  <Counter
-    value={store.getState()}
-    onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
-    onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
-  />,
-  rootEl
-)
+sagaMiddleware.run(rootSaga);
 
-render()
-store.subscribe(render)
+document.addEventListener('DOMContentLoaded', () => {
+  render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById('root')
+  )
+})
